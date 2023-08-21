@@ -5,6 +5,7 @@ I was awarded a contract to help develop their website utilizing my knowledge of
 This fully responsive website was built using HTML, JavaScript and CSS using the React JavaScript Framework.
 
 Screenshots:
+
 Home:
 <img width="1350" alt="home" src="https://github.com/LeulMesfin/hiwotStudioSite/assets/60782324/4c72dc19-5fc8-4283-b53a-d32372b2d26e">
 
