@@ -1,0 +1,62 @@
+.slider2 {
+  padding-top: 15px;
+  height: 400px;
+  padding-bottom: 30rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-track2 {
+  animation: scroll 20s linear infinite;
+  display: flex;
+  width: calc(400px * 18);
+}
+
+.slide2 {
+  text-align: center;
+  transition: transform 1s;
+  font-weight: 500;
+  padding: 5px;
+}
+
+/* Gradient Shadows */
+.slider2::before, 
+.slider2::after {
+    background: linear-gradient(to right, rgba(255, 247, 242, 1) 0%,
+    rgba(255,255,255,0) 100%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 15%;
+    z-index: 2;
+}
+
+.slider2::before {
+  left: 0;
+  top: 0;
+}
+
+.slider2::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-400px * 9))
+  }
+}
+
+
+.slide-track2:hover {
+  animation-play-state: paused;
+}
+
+.slide2:hover {
+  transform: scale(1.05);
+}

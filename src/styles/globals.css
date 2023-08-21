@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS */
+
+.bookBtn {
+  appearance: none;
+  background-color: #C5995C;
+  border: 2px solid #C5995C;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFF7F2;
+  cursor: pointer;
+  /* display: inline-block; */
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 10rem;
+  will-change: transform;
+}
+
+.bookBtn:disabled {
+  pointer-events: none;
+}
+
+.bookBtn:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.bookBtn:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+.readBtn {
+  height: 2rem;
+  width: 8rem;
+  font-size: 13px;
+  
+  font-weight: 200;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.readBtn:after {
+  content: "";
+  background-color: #C5995C;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.readBtn:hover:after {
+  top: 0px;
+  left: 0px;
+} 
+
+.button-52 {
+  height: 2rem;
+  width: 8rem;
+  font-size: 13px;
+  font-weight: 200;
+}
+
+.fieldset {
+  margin: 20px;
+  padding: 0 10px 10px;
+  border: 1px solid #666;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.8rem #666;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.rounded-10 {
+  border-radius: 10px;
+}
+
+.nav {
+  /* font-family: 'Urbanist', serif; */
+  font-family: 'Urbanist', sans-serif;
+}
+
+h1 {
+  /* font-family: 'Noto Serif Display', serif; */
+  font-size: 5rem;
+  font-family: 'Noto Serif Display', serif;
+}
+
+h2 {
+  font-family: 'Noto Serif Display', serif;
+}
+
+h3 {
+  font-size: 1.12rem;
+  font-weight: bold;
+  font-family: 'Noto Serif Display', serif;
+}
+
+p {
+  font-family: 'Noto Serif Display', serif;
+  font-weight: 600;
+}
+
+.tiltBox {
+  font-weight: 500;
+}
+
+.headerContainer {
+  width: auto;
+  margin-left: 50px;
+}
+
+.headerContainer h1 {
+  justify-content: center;
+  align-items: center;
+  /* font-size: 90px; */
+  height: 60px;
+  /* font-weight: 150; */
+  color: wheat;
+  font-family: 'Noto Serif Display', serif;
+}
+
+.headerContainer p {
+  padding: 0;
+  /* font-size: 40px; */
+  font-weight: lighter;
+  color: wheat;
+  
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-400px * 6))
+  }
+}
+
+.slider {
+  padding-top: 35px;
+  height: 235px;
+  padding-bottom: 235px;
+  /* overflow sometimes Breaks on mobile */
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-track {
+  animation: scroll 25s linear infinite;
+  display: flex;
+  width: calc(400px * 12);
+}
+
+.slide-track:hover {
+  animation-play-state: paused;
+}
+
+.slide {
+  text-align: center;
+  transition: transform 1s;
+  font-weight: 500;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 400px;
+}
+
+.slide:hover {
+  transform: scale(1.05);
+}
+
+/* Gradient Shadows */
+.slider::before,
+.slider::after {
+  background: linear-gradient(to right, #171717 0%,
+  rgba(255, 255, 255, 0) 100%);
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 15%;
+  z-index: 2;
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Opera/IE 8+ */
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  scroll-behavior: smooth;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
